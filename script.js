@@ -99,10 +99,13 @@ console.log(editInput, editas)
 
 editas.addEventListener("click", (e)=>{
     e.preventDefault()
-    const editable = editInput.value
+    const editable = parseInt(editInput.value)
     console.log(editable)
 
 const fromLS = JSON.parse(localStorage.getItem("zmones"))
 console.log(fromLS)
 const founded = fromLS.find(el => el.id === editable)
+console.log(founded)
+
+inputas.value=fromLS[founded].name
 })
