@@ -55,6 +55,8 @@
 // console.log(anchoras);
 
 // 4. sukurti keleta "p" tagu div viduje, pasizymeti elementu masyva ir prideti jiems stiliu - kas antro elemento raudonas tekstas ir juodas background, likusiu tekstas baltas, background zalias
+
+
 // const spalvotasDivas = document.querySelectorAll("p");
 // console.log(spalvotasDivas);
 // spalvotasDivas.forEach(function (element, index) {
@@ -105,21 +107,20 @@ divOfButtons.append(button1, button2);
 let elementas;
 let button1DefaultColor = "white";
 let button2DefaultColor = "white";
-let skaitliukasCreate = 0;
-let skaitliukasDelete = 0;
+let skaitliukas = 0
 
 const counter1 = document.createElement("text");
-counter1.innerText = ` (times clicked: ${skaitliukasCreate})`;
+counter1.innerText = ` (times clicked: ${skaitliukas})`;
 button1.appendChild(counter1);
 
 const counter2 = document.createElement("text");
-counter2.innerText = ` (times clicked: ${skaitliukasDelete})`;
+counter2.innerText = ` (times clicked: ${skaitliukas})`;
 button2.appendChild(counter2);
 
 // klausytojas + skaitliukas
 button1.addEventListener("click", (event) => {
   event.preventDefault();
-  skaitliukasCreate++;
+  skaitliukas++;
 
   elementas = document.createElement("p");
   elementas.innerText = "created new element";
@@ -131,12 +132,12 @@ button1.addEventListener("click", (event) => {
   }, 100);
 
   // updatintas skaitliukas (BUTINA)
-  counter1.innerText = ` (times clicked: ${skaitliukasCreate})`;
+  counter1.innerText = ` (times clicked: ${skaitliukas})`;
 });
 
 button2.addEventListener("click", (event) => {
   event.preventDefault();
-  skaitliukasDelete++;
+  skaitliukas--;
 
   // tikrina ar egzistuoja elementas, jei egzistuoja istrina ir atspausdina
   if (elementas) {
@@ -151,5 +152,5 @@ button2.addEventListener("click", (event) => {
   }
 
   // updatintas skaitliukas (BUTINA)
-  counter2.innerText = ` (times clicked: ${skaitliukasDelete})`;
+  counter2.innerText = ` (times clicked: ${skaitliukas})`;
 });

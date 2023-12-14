@@ -94,3 +94,21 @@ button1.addEventListener("click", (event) => {
 });
 
 // 6. Sukurti 6 p tagus ir jiems irasyti teksta is susikurto zodziu masyvo. Kaskart perkrovus puslapi p tage turi buti random zodis is masyvo
+
+const random = ((array)=>{
+  const ranIndex = Math.floor(Math.random() * array.length)
+  console.log(ranIndex)
+  return array[ranIndex]
+ 
+})
+
+const wordsConteiner =document.getElementById("words")
+const masyvas = ["obuolys", "kriause", "apelsinas", "vynuoges", "bananai", "mandarinai"]
+for (let i = 1; i<=masyvas.length; i++){
+  const pElementai = document.createElement("li")
+  const randomWord = random(masyvas)
+
+  pElementai.innerText = randomWord
+
+  wordsConteiner.appendChild(pElementai)
+}
