@@ -60,10 +60,10 @@ button.addEventListener("click", () => {
 }
 
 itemsLs.forEach((el)=> {
-  const tableCheck = document.querySelector("tr")
-  if(tableCheck){
-      tableCheck.remove()
-  }
+  // const tableCheck = document.querySelector("table")
+  // if(tableCheck){
+  //     tableCheck.remove()
+  // }
   const table = document.createElement("table")
   const tableBody = document.createElement("tbody")
   const eilSk = 1 // eilSk talpina ivesta value i langelius
